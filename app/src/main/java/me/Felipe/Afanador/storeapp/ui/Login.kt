@@ -32,11 +32,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import androidx.navigation.NavController
 
 
-@Preview
+
 @Composable
-fun Login() {
+fun Login(navController: NavController) {
     Scaffold {innerPading->
         Column (modifier = Modifier.padding(innerPading)
             .fillMaxSize()
@@ -102,7 +103,9 @@ fun Login() {
                     text = "Iniciar Sesión"
                 )
             }
-            TextButton(onClick = {}) {
+            TextButton(onClick = {
+                navController.navigate("registrarse")
+            }) {
                 Text(
                     "No tienes cuenta?, Registrate",
                     color = Color(0xFFFF9900)
